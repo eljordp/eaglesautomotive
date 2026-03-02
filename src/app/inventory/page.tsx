@@ -59,7 +59,7 @@ export default function InventoryPage() {
       </section>
 
       {/* Filters */}
-      <section className="sticky top-[82px] z-40 bg-[#060608]/95 backdrop-blur-xl border-y border-white/[0.04]">
+      <section className="sticky top-[82px] z-40 bg-[#06080b]/95 backdrop-blur-xl border-y border-white/[0.04]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col lg:flex-row gap-3">
             <div className="relative flex-1">

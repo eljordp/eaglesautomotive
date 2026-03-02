@@ -177,7 +177,7 @@ export default function FinancingPage() {
 
               <button
                 type="submit"
-                className="w-full bg-red hover:bg-red-hover text-white py-4 rounded-sm font-semibold text-sm uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_40px_rgba(200,16,46,0.2)] cursor-pointer"
+                className="w-full bg-red hover:bg-red-hover text-white py-4 rounded-sm font-semibold text-sm uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_40px_rgba(91,141,184,0.2)] cursor-pointer"
               >
                 Submit Application
               </button>

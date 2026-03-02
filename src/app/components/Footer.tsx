@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#040406] border-t border-white/[0.04]">
+    <footer className="relative bg-[#040609] border-t border-white/[0.04]">
       {/* Red accent line */}
       <div className="h-[1px] bg-gradient-to-r from-transparent via-red/40 to-transparent" />
 

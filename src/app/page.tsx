@@ -18,8 +18,8 @@ export default function Home() {
         />
         {/* Dark overlays */}
         <div className="absolute inset-0 bg-black/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060608] via-[#060608]/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#060608]/80 via-transparent to-[#060608]/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#06080b] via-[#06080b]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06080b]/80 via-transparent to-[#06080b]/80" />
 
         {/* Red accent glow */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red/[0.07] rounded-full blur-[150px]" />
@@ -34,7 +34,7 @@ export default function Home() {
           <h1 className="text-5xl sm:text-7xl lg:text-[110px] font-black tracking-[-0.03em] mb-6 leading-[0.85]">
             <span className="text-white/90">FIND YOUR</span>
             <br />
-            <span className="bg-gradient-to-r from-red via-red to-[#ff4444] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-silver via-white to-silver bg-clip-text text-transparent">
               PERFECT RIDE
             </span>
           </h1>
@@ -46,7 +46,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/inventory"
-              className="w-full sm:w-auto bg-red hover:bg-red-hover text-white px-10 py-4 rounded-sm font-semibold text-sm uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_40px_rgba(200,16,46,0.3)]"
+              className="w-full sm:w-auto bg-red hover:bg-red-hover text-white px-10 py-4 rounded-sm font-semibold text-sm uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_40px_rgba(91,141,184,0.3)]"
             >
               Explore Inventory
             </Link>
@@ -175,7 +175,7 @@ export default function Home() {
                   alt="Premium vehicle"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060608] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#06080b] via-transparent to-transparent" />
               </div>
 
               {/* Floating stat card */}
@@ -254,7 +254,7 @@ export default function Home() {
           }}
         />
         <div className="absolute inset-0 bg-black/75" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#060608] via-transparent to-[#060608]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06080b] via-transparent to-[#06080b]" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[0.95]">
@@ -267,7 +267,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="tel:3474850898"
-              className="w-full sm:w-auto bg-red hover:bg-red-hover text-white px-10 py-4 rounded-sm font-semibold text-sm uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_40px_rgba(200,16,46,0.3)]"
+              className="w-full sm:w-auto bg-red hover:bg-red-hover text-white px-10 py-4 rounded-sm font-semibold text-sm uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_40px_rgba(91,141,184,0.3)]"
             >
               Call (347) 485-0898
             </a>

@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #060608;
-  --foreground: #f0f0f0;
-  --red: #c8102e;
-  --red-hover: #a00d24;
-  --red-glow: rgba(200, 16, 46, 0.15);
+  --background: #06080b;
+  --foreground: #e8ecf0;
+  --red: #5b8db8;
+  --red-hover: #4a7aa6;
+  --red-glow: rgba(91, 141, 184, 0.15);
   --gold: #c9a96e;
   --gold-dim: rgba(201, 169, 110, 0.1);
-  --card: #0e0e12;
-  --card-border: #1a1a22;
-  --card-hover: #131318;
-  --muted: #6b6b78;
-  --surface: #111116;
+  --silver: #9eaab8;
+  --card: #0b0d12;
+  --card-border: #161a22;
+  --card-hover: #10131a;
+  --muted: #5e6878;
+  --surface: #0e1117;
 }
 
 @theme inline {
@@ -23,6 +24,7 @@
   --color-red-glow: var(--red-glow);
   --color-gold: var(--gold);
   --color-gold-dim: var(--gold-dim);
+  --color-silver: var(--silver);
   --color-card: var(--card);
   --color-card-border: var(--card-border);
   --color-card-hover: var(--card-hover);
@@ -49,11 +51,11 @@ html {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #222;
+  background: #1e2430;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #444;
+  background: #2e3848;
 }
 
 /* Noise texture overlay */
@@ -66,19 +68,9 @@ html {
   z-index: 0;
 }
 
-/* Elegant line animation */
-@keyframes line-slide {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-.line-animate {
-  animation: line-slide 3s ease-in-out infinite;
-}
-
 /* Glass card */
 .glass {
-  background: rgba(14, 14, 18, 0.7);
+  background: rgba(11, 13, 18, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
