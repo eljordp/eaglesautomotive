@@ -2,56 +2,63 @@ import type { Vehicle } from "@/data/vehicles";
 
 export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
   return (
-    <div className="group bg-card border border-card-border rounded-xl overflow-hidden hover:border-red/30 transition-all duration-300">
+    <div className="group relative bg-card rounded-sm overflow-hidden border border-white/[0.04] hover:border-red/20 transition-all duration-500">
       {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-[#1a1a1a]">
+      <div className="relative aspect-[16/10] overflow-hidden">
         <img
           src={vehicle.image}
           alt={`${vehicle.year} ${vehicle.make} ${vehicle.model}`}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
         />
-        <div className="absolute top-3 left-3 bg-red text-white text-xs font-bold px-2.5 py-1 rounded-md">
-          ${vehicle.price.toLocaleString()}
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+        {/* Price badge */}
+        <div className="absolute bottom-3 left-3">
+          <div className="text-2xl font-black text-white tracking-tight">
+            ${vehicle.price.toLocaleString()}
+          </div>
+          <div className="text-[10px] uppercase tracking-wider text-white/50 font-medium">+ tax &amp; fees</div>
+        </div>
+
+        {/* Body type tag */}
+        <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm text-[10px] uppercase tracking-wider text-white/70 font-medium px-2.5 py-1 rounded-sm">
+          {vehicle.bodyType}
         </div>
       </div>
 
       {/* Info */}
-      <div className="p-4">
-        <h3 className="text-lg font-bold mb-1">
+      <div className="p-5">
+        <h3 className="text-base font-semibold mb-0.5 tracking-tight">
           {vehicle.year} {vehicle.make} {vehicle.model}
         </h3>
-        <p className="text-sm text-muted mb-3">{vehicle.trim} &middot; {vehicle.color}</p>
+        <p className="text-xs text-gold/80 font-medium tracking-wide uppercase mb-4">{vehicle.trim}</p>
 
-        <div className="grid grid-cols-2 gap-2 text-xs text-muted mb-4">
-          <div className="flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
+        {/* Specs row */}
+        <div className="flex items-center gap-3 text-[11px] text-muted">
+          <span className="flex items-center gap-1">
+            <span className="w-1 h-1 rounded-full bg-red/60" />
             {vehicle.mileage.toLocaleString()} mi
-          </div>
-          <div className="flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-            </svg>
+          </span>
+          <span className="flex items-center gap-1">
+            <span className="w-1 h-1 rounded-full bg-red/60" />
             {vehicle.transmission}
-          </div>
-          <div className="flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-            </svg>
-            {vehicle.engine}
-          </div>
-          <div className="flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-            </svg>
-            {vehicle.bodyType}
-          </div>
+          </span>
+          <span className="flex items-center gap-1">
+            <span className="w-1 h-1 rounded-full bg-red/60" />
+            {vehicle.fuelType}
+          </span>
         </div>
 
-        <button className="w-full bg-white/5 hover:bg-red text-white py-2.5 rounded-lg text-sm font-semibold transition-colors cursor-pointer">
-          View Details
-        </button>
+        {/* Divider + CTA */}
+        <div className="mt-4 pt-4 border-t border-white/[0.04]">
+          <button className="w-full flex items-center justify-center gap-2 text-xs uppercase tracking-widest font-semibold text-white/40 hover:text-red group-hover:text-red transition-colors duration-300 cursor-pointer py-1">
+            View Details
+            <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   );

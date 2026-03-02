@@ -2,37 +2,38 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#060606] border-t border-card-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="relative bg-[#040406] border-t border-white/[0.04]">
+      {/* Red accent line */}
+      <div className="h-[1px] bg-gradient-to-r from-transparent via-red/40 to-transparent" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-red rounded-lg flex items-center justify-center font-bold text-white text-lg">
-                EA
-              </div>
-              <div>
-                <div className="text-lg font-bold">Eagles Automotive</div>
-                <div className="text-xs text-muted">Inc.</div>
-              </div>
+          <div className="lg:col-span-1">
+            <div className="mb-5">
+              <img
+                src="/logo.png"
+                alt="Eagles Automotive Inc"
+                className="h-16 w-auto"
+              />
             </div>
-            <p className="text-sm text-muted leading-relaxed">
-              Quality used vehicles at unbeatable prices in Murfreesboro, Tennessee. Your trusted local dealership since day one.
+            <p className="text-sm text-muted/70 leading-relaxed max-w-xs">
+              Your trusted destination for premium pre-owned vehicles in Middle Tennessee.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Quick Links</h3>
-            <ul className="space-y-2.5">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-5">Navigate</h3>
+            <ul className="space-y-3">
               {[
-                { href: "/inventory", label: "Browse Inventory" },
-                { href: "/financing", label: "Get Financing" },
-                { href: "/service", label: "Service Center" },
-                { href: "/contact", label: "Contact Us" },
+                { href: "/inventory", label: "Inventory" },
+                { href: "/financing", label: "Financing" },
+                { href: "/service", label: "Service" },
+                { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-muted hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm text-muted/60 hover:text-white transition-colors duration-300">
                     {link.label}
                   </Link>
                 </li>
@@ -42,32 +43,29 @@ export default function Footer() {
 
           {/* Business Hours */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Business Hours</h3>
-            <ul className="space-y-2.5 text-sm text-muted">
-              <li className="flex justify-between">
-                <span>Monday - Friday</span>
-                <span className="text-white">9AM - 5PM</span>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-5">Hours</h3>
+            <ul className="space-y-3 text-sm">
+              <li className="flex justify-between text-muted/60">
+                <span>Mon — Fri</span>
+                <span className="text-white/80 font-medium">9 AM – 5 PM</span>
               </li>
-              <li className="flex justify-between">
+              <li className="flex justify-between text-muted/60">
                 <span>Saturday</span>
-                <span className="text-white">9AM - 2PM</span>
+                <span className="text-white/80 font-medium">9 AM – 2 PM</span>
               </li>
-              <li className="flex justify-between">
+              <li className="flex justify-between text-muted/60">
                 <span>Sunday</span>
-                <span className="text-red">Closed</span>
+                <span className="text-red/70 font-medium">Closed</span>
               </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Contact</h3>
-            <ul className="space-y-3 text-sm">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-5">Reach Us</h3>
+            <ul className="space-y-4 text-sm">
               <li>
-                <a href="tel:3474850898" className="flex items-start gap-2 text-muted hover:text-white transition-colors">
-                  <svg className="w-4 h-4 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
+                <a href="tel:3474850898" className="text-white/80 hover:text-red transition-colors duration-300 font-medium">
                   (347) 485-0898
                 </a>
               </li>
@@ -76,12 +74,8 @@ export default function Footer() {
                   href="https://maps.google.com/?q=2145+NW+Broad+St+Murfreesboro+TN+37129"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2 text-muted hover:text-white transition-colors"
+                  className="text-muted/60 hover:text-white transition-colors duration-300 leading-relaxed"
                 >
-                  <svg className="w-4 h-4 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
                   2145 NW Broad St<br />Murfreesboro, TN 37129
                 </a>
               </li>
@@ -89,11 +83,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-card-border flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-muted">
-            &copy; {new Date().getFullYear()} Eagles Automotive Inc. All rights reserved.
+        {/* Bottom bar */}
+        <div className="mt-16 pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="text-[11px] text-white/20 tracking-wider">
+            &copy; {new Date().getFullYear()} Eagles Automotive Inc.
           </p>
-          <p className="text-xs text-muted">
+          <p className="text-[11px] text-white/20 tracking-wider">
             Murfreesboro, Tennessee
           </p>
         </div>

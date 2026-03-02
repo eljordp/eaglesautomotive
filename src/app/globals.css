@@ -1,13 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #f5f5f5;
-  --red: #e02020;
-  --red-hover: #c41a1a;
-  --card: #141414;
-  --card-border: #222222;
-  --muted: #888888;
+  --background: #060608;
+  --foreground: #f0f0f0;
+  --red: #c8102e;
+  --red-hover: #a00d24;
+  --red-glow: rgba(200, 16, 46, 0.15);
+  --gold: #c9a96e;
+  --gold-dim: rgba(201, 169, 110, 0.1);
+  --card: #0e0e12;
+  --card-border: #1a1a22;
+  --card-hover: #131318;
+  --muted: #6b6b78;
+  --surface: #111116;
 }
 
 @theme inline {
@@ -15,9 +20,14 @@
   --color-foreground: var(--foreground);
   --color-red: var(--red);
   --color-red-hover: var(--red-hover);
+  --color-red-glow: var(--red-glow);
+  --color-gold: var(--gold);
+  --color-gold-dim: var(--gold-dim);
   --color-card: var(--card);
   --color-card-border: var(--card-border);
+  --color-card-hover: var(--card-hover);
   --color-muted: var(--muted);
+  --color-surface: var(--surface);
   --font-sans: var(--font-inter);
 }
 
@@ -27,22 +37,48 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Premium scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
+  background: #222;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #444;
+}
+
+/* Noise texture overlay */
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Elegant line animation */
+@keyframes line-slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.line-animate {
+  animation: line-slide 3s ease-in-out infinite;
+}
+
+/* Glass card */
+.glass {
+  background: rgba(14, 14, 18, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }

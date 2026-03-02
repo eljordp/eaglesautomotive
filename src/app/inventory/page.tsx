@@ -4,6 +4,9 @@ import { useState, useMemo } from "react";
 import { vehicles, makes, bodyTypes } from "@/data/vehicles";
 import VehicleCard from "../components/VehicleCard";
 
+const inputClass =
+  "w-full bg-surface border border-white/[0.06] rounded-sm px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-red/40 transition-colors";
+
 export default function InventoryPage() {
   const [search, setSearch] = useState("");
   const [selectedMake, setSelectedMake] = useState("");
@@ -44,67 +47,49 @@ export default function InventoryPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="pt-12 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-5xl font-black mb-2">Our Inventory</h1>
-          <p className="text-muted text-lg">
-            Browse {vehicles.length} quality pre-owned vehicles
+      <section className="relative pt-32 pb-12 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-red/[0.03] to-transparent" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-[11px] uppercase tracking-[0.3em] text-red font-semibold mb-3">Our Collection</div>
+          <h1 className="text-4xl sm:text-6xl font-black tracking-tight mb-3">Inventory</h1>
+          <p className="text-white/35 text-lg">
+            {vehicles.length} premium pre-owned vehicles
           </p>
         </div>
       </section>
 
       {/* Filters */}
-      <section className="pb-8 sticky top-20 z-40 bg-background/95 backdrop-blur-md border-b border-card-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="sticky top-[82px] z-40 bg-[#060608]/95 backdrop-blur-xl border-y border-white/[0.04]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col lg:flex-row gap-3">
-            {/* Search */}
             <div className="relative flex-1">
-              <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              <svg className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               <input
                 type="text"
-                placeholder="Search by make, model, year..."
+                placeholder="Search make, model, year..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full bg-card border border-card-border rounded-lg pl-10 pr-4 py-3 text-sm text-white placeholder:text-muted focus:outline-none focus:border-red/50"
+                className={`${inputClass} pl-10`}
               />
             </div>
 
-            {/* Make filter */}
-            <select
-              value={selectedMake}
-              onChange={(e) => setSelectedMake(e.target.value)}
-              className="bg-card border border-card-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-red/50 appearance-none cursor-pointer"
-            >
+            <select value={selectedMake} onChange={(e) => setSelectedMake(e.target.value)} className={`${inputClass} appearance-none cursor-pointer lg:w-40`}>
               <option value="">All Makes</option>
               {makes.map((make) => (
-                <option key={make} value={make}>
-                  {make}
-                </option>
+                <option key={make} value={make}>{make}</option>
               ))}
             </select>
 
-            {/* Body type filter */}
-            <select
-              value={selectedBody}
-              onChange={(e) => setSelectedBody(e.target.value)}
-              className="bg-card border border-card-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-red/50 appearance-none cursor-pointer"
-            >
+            <select value={selectedBody} onChange={(e) => setSelectedBody(e.target.value)} className={`${inputClass} appearance-none cursor-pointer lg:w-36`}>
               <option value="">All Types</option>
               {bodyTypes.map((type) => (
-                <option key={type} value={type}>
-                  {type}
-                </option>
+                <option key={type} value={type}>{type}</option>
               ))}
             </select>
 
-            {/* Max price */}
-            <select
-              value={maxPrice}
-              onChange={(e) => setMaxPrice(e.target.value)}
-              className="bg-card border border-card-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-red/50 appearance-none cursor-pointer"
-            >
+            <select value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} className={`${inputClass} appearance-none cursor-pointer lg:w-40`}>
               <option value="">Any Price</option>
               <option value="15000">Under $15,000</option>
               <option value="20000">Under $20,000</option>
@@ -113,14 +98,9 @@ export default function InventoryPage() {
               <option value="35000">Under $35,000</option>
             </select>
 
-            {/* Sort */}
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className="bg-card border border-card-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-red/50 appearance-none cursor-pointer"
-            >
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
+            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className={`${inputClass} appearance-none cursor-pointer lg:w-44`}>
+              <option value="price-asc">Price: Low → High</option>
+              <option value="price-desc">Price: High → Low</option>
               <option value="year-desc">Year: Newest</option>
               <option value="mileage-asc">Mileage: Lowest</option>
             </select>
@@ -129,22 +109,22 @@ export default function InventoryPage() {
       </section>
 
       {/* Results */}
-      <section className="py-8 pb-20">
+      <section className="py-10 pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-sm text-muted mb-6">
-            Showing {filtered.length} vehicle{filtered.length !== 1 ? "s" : ""}
+          <p className="text-[11px] text-white/25 uppercase tracking-[0.2em] font-medium mb-8">
+            {filtered.length} vehicle{filtered.length !== 1 ? "s" : ""} found
           </p>
 
           {filtered.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {filtered.map((vehicle) => (
                 <VehicleCard key={vehicle.id} vehicle={vehicle} />
               ))}
             </div>
           ) : (
-            <div className="text-center py-20">
-              <p className="text-2xl font-bold mb-2">No vehicles found</p>
-              <p className="text-muted mb-6">Try adjusting your search filters</p>
+            <div className="text-center py-24">
+              <p className="text-2xl font-bold mb-2">No vehicles match</p>
+              <p className="text-white/30 mb-8">Try adjusting your filters</p>
               <button
                 onClick={() => {
                   setSearch("");
@@ -152,9 +132,9 @@ export default function InventoryPage() {
                   setSelectedBody("");
                   setMaxPrice("");
                 }}
-                className="bg-red hover:bg-red-hover text-white px-6 py-3 rounded-lg font-semibold text-sm transition-colors cursor-pointer"
+                className="bg-red hover:bg-red-hover text-white px-8 py-3 rounded-sm font-semibold text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer"
               >
-                Clear All Filters
+                Clear Filters
               </button>
             </div>
           )}
