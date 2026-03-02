@@ -16,19 +16,19 @@ export default function ContactPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-10 sm:pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-red/[0.03] to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-[11px] uppercase tracking-[0.3em] text-red font-semibold mb-3">Get In Touch</div>
-          <h1 className="text-4xl sm:text-6xl font-black tracking-tight mb-4">Contact Us</h1>
-          <p className="text-white/35 text-lg">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="text-[11px] uppercase tracking-[0.3em] text-red font-semibold mb-2 sm:mb-3">Get In Touch</div>
+          <h1 className="text-3xl sm:text-6xl font-black tracking-tight mb-3 sm:mb-4">Contact Us</h1>
+          <p className="text-white/35 text-sm sm:text-lg">
             Questions? We&apos;d love to hear from you.
           </p>
         </div>
       </section>
 
-      <section className="pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pb-20 sm:pb-28">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             {/* Contact Info */}
             <div className="lg:col-span-2 space-y-4">

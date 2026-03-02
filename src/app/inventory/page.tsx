@@ -47,21 +47,21 @@ export default function InventoryPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative pt-32 pb-12 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-8 sm:pb-12 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-red/[0.03] to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-[11px] uppercase tracking-[0.3em] text-red font-semibold mb-3">Our Collection</div>
-          <h1 className="text-4xl sm:text-6xl font-black tracking-tight mb-3">Inventory</h1>
-          <p className="text-white/35 text-lg">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="text-[11px] uppercase tracking-[0.3em] text-red font-semibold mb-2 sm:mb-3">Our Collection</div>
+          <h1 className="text-3xl sm:text-6xl font-black tracking-tight mb-2 sm:mb-3">Inventory</h1>
+          <p className="text-white/35 text-sm sm:text-lg">
             {vehicles.length} premium pre-owned vehicles
           </p>
         </div>
       </section>
 
       {/* Filters */}
-      <section className="sticky top-[82px] z-40 bg-[#06080b]/95 backdrop-blur-xl border-y border-white/[0.04]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col lg:flex-row gap-3">
+      <section className="sticky top-[66px] sm:top-[82px] z-40 bg-[#06080b]/95 backdrop-blur-xl border-y border-white/[0.04]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-3 sm:py-4">
+          <div className="flex flex-col lg:flex-row gap-2 sm:gap-3">
             <div className="relative flex-1">
               <svg className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -109,9 +109,9 @@ export default function InventoryPage() {
       </section>
 
       {/* Results */}
-      <section className="py-10 pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[11px] text-white/25 uppercase tracking-[0.2em] font-medium mb-8">
+      <section className="py-6 sm:py-10 pb-20 sm:pb-28">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <p className="text-[11px] text-white/25 uppercase tracking-[0.2em] font-medium mb-6 sm:mb-8">
             {filtered.length} vehicle{filtered.length !== 1 ? "s" : ""} found
           </p>
 

@@ -25,13 +25,13 @@ export default function ServicePage() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-10 sm:pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-red/[0.03] to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="text-[11px] uppercase tracking-[0.3em] text-red font-semibold mb-3">Maintenance &amp; Repair</div>
-            <h1 className="text-4xl sm:text-6xl font-black tracking-tight mb-4">Service Center</h1>
-            <p className="text-white/35 text-lg leading-relaxed">
+            <div className="text-[11px] uppercase tracking-[0.3em] text-red font-semibold mb-2 sm:mb-3">Maintenance &amp; Repair</div>
+            <h1 className="text-3xl sm:text-6xl font-black tracking-tight mb-3 sm:mb-4">Service Center</h1>
+            <p className="text-white/35 text-sm sm:text-lg leading-relaxed">
               Expert technicians handling everything from routine maintenance to complex repairs.
             </p>
           </div>
@@ -39,8 +39,8 @@ export default function ServicePage() {
       </section>
 
       {/* Services Grid */}
-      <section className="pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pb-12 sm:pb-20">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {serviceList.map((service, i) => (
               <div key={service.title} className="bg-card border border-white/[0.04] rounded-sm p-7 hover:border-red/15 transition-all duration-500 group">
@@ -54,8 +54,8 @@ export default function ServicePage() {
       </section>
 
       {/* Hours callout */}
-      <section className="pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pb-12 sm:pb-20">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="relative bg-card border border-white/[0.04] rounded-sm p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 overflow-hidden">
             <div className="absolute top-0 left-0 w-1 h-full bg-red" />
             <div className="pl-4">
@@ -73,8 +73,8 @@ export default function ServicePage() {
       </section>
 
       {/* Service Request Form */}
-      <section className="pb-28">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pb-20 sm:pb-28">
+        <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="text-[11px] uppercase tracking-[0.3em] text-red font-semibold mb-3">Book Appointment</div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-8">Request Service</h2>
 

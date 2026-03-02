@@ -16,13 +16,13 @@ export default function FinancingPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-10 sm:pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-red/[0.03] to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="text-[11px] uppercase tracking-[0.3em] text-red font-semibold mb-3">Finance Center</div>
-            <h1 className="text-4xl sm:text-6xl font-black tracking-tight mb-4">Get Approved</h1>
-            <p className="text-white/35 text-lg leading-relaxed">
+            <div className="text-[11px] uppercase tracking-[0.3em] text-red font-semibold mb-2 sm:mb-3">Finance Center</div>
+            <h1 className="text-3xl sm:text-6xl font-black tracking-tight mb-3 sm:mb-4">Get Approved</h1>
+            <p className="text-white/35 text-sm sm:text-lg leading-relaxed">
               We work with all credit types. Complete the application below and our team will reach out with tailored options.
             </p>
           </div>
@@ -30,8 +30,8 @@ export default function FinancingPage() {
       </section>
 
       {/* Benefits */}
-      <section className="pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pb-10 sm:pb-16">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
               { num: "01", title: "All Credit Welcome", desc: "Good credit, bad credit, or first-time buyer — we find a path." },
@@ -49,8 +49,8 @@ export default function FinancingPage() {
       </section>
 
       {/* Application Form */}
-      <section className="pb-28">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pb-20 sm:pb-28">
+        <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
           {submitted ? (
             <div className="bg-card border border-green-500/20 rounded-sm p-12 text-center">
               <div className="w-16 h-16 border border-green-500/30 rounded-full flex items-center justify-center mx-auto mb-5">
